@@ -1,35 +1,132 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+
+import Home from "./pages/home/home";
+import ErrorOrientation from "./pages/errors/orientation";
+
+
+// Desde esta pantalla se muestra el sitio
+
+type Orientation = {
+  angle : number,
+  type: string,
+  onchange: Function | null,
+}
+
+type OrientationValidate = {
+  correct: boolean,
+  mobile: boolean
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  // Mostramos el error un error en el video juego
+  const [error, setError] = useState<boolean>(false);
+
+  useEffect( () => {
+
+    const previousOrientation : Orientation = screen.orientation;
+
+    orientationError(previousOrientation)
+
+    previousOrientation.onchange = () => {
+
+      orientationError(previousOrientation)
+
+    }
+
+  });
+
+  const orientationError =  (previousOrientation : Orientation) => {
+
+    const orientationValidate : OrientationValidate = validateOrientation(previousOrientation);
+
+    if(orientationValidate.mobile){
+
+      if(!orientationValidate.correct){
+        setError(true);
+      }else{
+        setError(false);
+      }
+
+    }else{
+      setError(false);
+    }
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Home/>
+      {
+        error ? (
+          <ErrorOrientation/>
+        ) : null
+      }
     </>
   )
+}
+
+// Ejecutamos la orientacion del dispositivo
+
+function validateOrientation(previousOrientation : Orientation) : OrientationValidate {
+
+  if(mobileOperatingSystem()){
+
+    return getOrientation(previousOrientation)
+
+  }
+
+  return {
+
+    correct: false,
+    mobile: false
+
+  };
+
+}
+
+// Validamos la orientacion y mostramos el error
+
+function getOrientation(previousOrientation : Orientation) : OrientationValidate{
+
+  if(previousOrientation.angle){
+
+    return {
+
+      correct: true,
+      mobile: true
+      
+    };
+
+  }
+  
+  return {
+
+    correct: false,
+    mobile: true
+
+  };
+
+}
+
+
+// Validamos si el dispositivo es mobile
+
+
+/**
+ * 
+ * @returns { boolean }  - Si la funcion mobileOperatingSystem retorna true el usuario esta utilizando un sistema operativo mobile
+ */
+
+function mobileOperatingSystem() : boolean {
+
+  const userAgent : string = navigator.userAgent;
+
+  if(/android/i.test(userAgent) || /iPad|iPhone|iPod/.test(userAgent) ){
+    return true;
+  }
+
+  return false;
+
 }
 
 export default App

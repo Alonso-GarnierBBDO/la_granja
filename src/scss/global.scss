@@ -1,5 +1,10 @@
-body{
+@import './variable';
+@import './page/home';
+@import './page/error';
 
-    background-color: red;
-
+*,
+body,
+main{
+    padding: 0px;
+    margin: 0px;
 }
