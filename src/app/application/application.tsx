@@ -39,9 +39,9 @@ function Application() {
         setFull(false);
         setTextFull('Expand window')
       }else{
-        bodyElement.requestFullscreen
+        bodyElement.requestFullscreen();
         setFull(true);
-        setTextFull('Reduce window')
+        setTextFull('Reduce window') 
       }
 
     }
