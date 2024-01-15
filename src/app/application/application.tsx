@@ -1,33 +1,14 @@
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 
-import homeConfig from "../../hooks/home"
+import Home from "./home/home";
 
-type RefCanva = {
-
-  current : HTMLCanvasElement | null
-
-}
 
 function Application() {
 
-    const canva : RefCanva = useRef< HTMLCanvasElement | null >(null)
 
     const [full, setFull] = useState<boolean>(false);
     const [textFull, setTextFull] = useState<string>('Expand window');
 
-    useEffect( () => {
-      if(canva.current){
-        homeConfig(canva.current);
-      }
-
-      window.onresize = () => {
-
-        if(canva.current){
-          homeConfig(canva.current);
-        }
-      }
-
-    }, [])
 
     function expandWindow(){
 
@@ -48,11 +29,10 @@ function Application() {
 
     return (
       <>
-        <canvas id="canva" ref={canva}></canvas>
-
-          <button id="expand_window" onClick={expandWindow}> { textFull } </button>
-
-      
+        <section className="game">
+          <Home/>
+        </section>
+        <button id="expand_window" onClick={expandWindow}> { textFull } </button>
       </>
     )
   }

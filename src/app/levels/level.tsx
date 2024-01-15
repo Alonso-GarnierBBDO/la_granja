@@ -4,7 +4,10 @@ function Level() {
 
     return (
       <>
-        Hola mundo
+        <section className="allLevels">
+          <section className="silueta"></section>
+          <section className="vallas"></section>
+        </section>
       </>
     )
   }

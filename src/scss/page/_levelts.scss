@@ -1,0 +1,62 @@
+.allLevels{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(91, 91, 91);
+    background-image: url(../../../src/assets/img/bg.png);
+    background-size: cover;
+    background-position: center calc(100% - 50px);
+    background-repeat: no-repeat;
+
+    @include bp(tabletMD){
+        background-position: center calc(100% - 100px);
+    }
+
+
+    @include bp(laptop){
+        background-position: center calc(100% - 150px);
+    }
+
+    @include bp(escritorio){
+        background-position: center calc(100% - 170px);
+    }
+
+    .vallas{
+
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-image: url(../../../src/assets/img/valla.png);
+        background-position: center;
+        background-size: cover;
+
+    }
+
+    .silueta {
+        
+        width: 20vw;
+        height: 20vw;
+        position: fixed;
+        bottom: 30%;
+        right: 7%;
+        background-image: url(../../../src/assets/img/silueta.png);
+        background-position: center;
+        background-size: contain;
+
+        @include bp(mobileBIG){
+            bottom: 30%;
+            right: 7%;
+        }
+
+        @include bp(laptop){
+            bottom: 30%;
+            right: 7%;
+        }
+
+    }
+
+}
