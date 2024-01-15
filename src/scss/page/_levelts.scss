@@ -52,6 +52,11 @@
             right: 7%;
         }
 
+        @include bp(tablet){
+            bottom: 36%;
+            right: 7%;
+        }
+
         @include bp(tabletMD){
             bottom: 35%;
             right: 7%;
