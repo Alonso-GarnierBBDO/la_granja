@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import Home from "./pages/home/home";
-import ErrorOrientation from "./pages/errors/orientation";
+import Application from "./app/application/application";
+import ErrorOrientation from "./app/errors/orientation";
 
 
 // Desde esta pantalla se muestra el sitio
@@ -55,7 +55,7 @@ function App() {
 
   return (
     <>
-      <Home/>
+      <Application/>
       {
         error ? (
           <ErrorOrientation/>
