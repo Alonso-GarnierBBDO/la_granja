@@ -6,6 +6,16 @@
     left: 30%;
     bottom: 0px;
 
+    @include bp(laptop){
+        width: 35%;
+        left: 32.5%;
+    }
+
+    @include bp(escritorio){
+        width: 30%;
+        left: 35%;
+    }
+
     .parrilla{
         position: relative;
         height: 35vh;
@@ -15,12 +25,66 @@
         }
 
         @include bp(laptop){
+            height: 40vh;
+        }
+
+        @include bp(escritorio){
             height: 44vh;
         }
 
-        img {
-            width: 100%;
-            transform: translateY(-29px);
+
+
+        section {
+
+            position: relative;
+
+            img.parrillaImg {
+                width: 100%;
+                transform: translateY(-29px);
+                user-select: none;
+                pointer-events: none;
+            }
+    
+            img.llamasImg{
+    
+                position: absolute;
+                width: 85%;
+                left: 7.5%;
+                top: 0px;
+                transform: translateY(-45%);
+                mix-blend-mode: lighten;
+
+                @include bp(tablet){
+                    transform: translateY(-40%);
+                }
+
+                @include bp(laptop){
+                    transform: translateY(-29%);
+                }
+
+                @include bp(escritorio){
+                    transform: translateY(-28%);
+                }
+
+                @include keyframes(viewLlamas){
+
+                    0%{
+                        mix-blend-mode: lighten;
+                    }
+
+                    50%{
+                        mix-blend-mode: screen;
+                    }
+
+                    100%{
+                        mix-blend-mode: color-dodge;
+                    }
+
+                }
+
+                @include animate(viewLlamas, 1.5s, ease, infinite);
+    
+            }
         }
 
     }
