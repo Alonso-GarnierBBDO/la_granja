@@ -52,7 +52,9 @@
                 left: 7.5%;
                 top: 0px;
                 transform: translateY(-45%);
-                mix-blend-mode: lighten;
+                mix-blend-mode: screen;
+                user-select: none;
+                pointer-events: none;
 
                 @include bp(tablet){
                     transform: translateY(-40%);
@@ -82,11 +84,74 @@
 
                 }
 
-                @include animate(viewLlamas, 1.5s, ease, infinite);
+                @include animate(viewLlamas, 1.5s, linear, infinite);
     
             }
         }
 
     }
 
+}
+
+.bases{
+
+    position: fixed;
+    bottom: 0px;
+    width: 30%;
+    display: flex;
+    align-items: flex-end;
+    pointer-events: none;
+    user-select: none;
+
+    .base {
+        width: 200%;
+        transform: translateY(15%);
+    }
+
+    .plato{
+        width: 100%;
+        
+    }
+
+}
+
+
+.bases.left{
+    left: 0px;
+
+    .base {
+        transform: translateX(-50%) translateY(15%);
+    }
+
+}
+
+.bases.right{
+    right: 0px;
+}
+
+.platos{
+    position: fixed;
+    bottom: 0px;
+    width: 26%;
+    display: flex;
+    align-items: flex-end;
+    transform: translateY(-5%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    pointer-events: none;
+
+    @include bp(laptop){
+        transform: translateY(-10%); 
+    }
+
+}
+
+.platos.left{
+    left: 0px;
+}
+
+.platos.right{
+    right: 0px;
 }

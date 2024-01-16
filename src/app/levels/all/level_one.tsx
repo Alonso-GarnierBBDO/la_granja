@@ -3,6 +3,9 @@ import { useEffect, useRef } from 'react';
 import Parrilla from '../../../assets/img/parrilla.png';
 import Llamas from '../../../assets/img/llamas.png';
 
+// Components
+import Base from '../../../components/base/Base';
+
 function LevelOne(){
 
     const parrilla = useRef<HTMLImageElement | null>(null);
@@ -29,12 +32,14 @@ function LevelOne(){
     return (
         <>
             <section>
+                <Base classType="left"/>
                 <section className="parrilla">
                     <section>
                         <img ref={ parrilla } className='parrillaImg' src={Parrilla} alt="Parrilla imagen" />
                         <img ref={llamas} src={Llamas} className='llamasImg' alt="Llamas imagen" />
                     </section>
                 </section>
+                <Base classType="right"/>
             </section>
         </>
     )
