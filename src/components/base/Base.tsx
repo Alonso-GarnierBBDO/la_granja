@@ -78,7 +78,7 @@ function BaseLeft({ classType } : { classType : string }){
         if(carnesLeft){
 
             const bottomElement : number = carnesLeft.offsetTop;
-            const leftElement : number = carnesLeft.clientWidth / 2;
+            //const leftElement : number = carnesLeft.clientWidth / 2;
 
 
             carnesIMG.forEach( ( e : HTMLImageElement ) => {

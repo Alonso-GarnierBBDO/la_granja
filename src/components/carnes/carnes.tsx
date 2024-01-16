@@ -8,23 +8,23 @@ function CarnesComponent(){
 
     useEffect(() => {
 
-        const elementsImage : any = Object.values(cards.current);
-        ResizeElement(elementsImage)
+        //const elementsImage : any = Object.values(cards.current);
+        //ResizeElement(elementsImage)
 
 
     }, [cards]);
 
-    function ResizeElement(elementsImage : any){ 
+    /*function ResizeElement(elementsImage : any){ 
 
 
         const platos : HTMLElement | null = document.querySelector('.platos.left img');
 
         if(platos){
 
-
+            console.log(platos);
 
         }
-    }
+    }*/
 
     return (
         <>
