@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import Parrilla from '../../../assets/img/parrilla.png';
 import Llamas from '../../../assets/img/llamas.png';
