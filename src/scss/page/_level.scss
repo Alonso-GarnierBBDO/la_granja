@@ -1,0 +1,28 @@
+.level{
+
+    position: fixed;
+    width: 40%;
+    margin: auto;
+    left: 30%;
+    bottom: 0px;
+
+    .parrilla{
+        position: relative;
+        height: 35vh;
+
+        @include bp(tablet){
+            height: 40vh;
+        }
+
+        @include bp(laptop){
+            height: 44vh;
+        }
+
+        img {
+            width: 100%;
+            transform: translateY(-29px);
+        }
+
+    }
+
+}
