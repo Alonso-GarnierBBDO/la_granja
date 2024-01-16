@@ -5,6 +5,7 @@ import Llamas from '../../../assets/img/llamas.png';
 
 // Components
 import Base from '../../../components/base/Base';
+import CarnesComponent from '../../../components/carnes/carnes';
 
 function LevelOne(){
 
@@ -37,6 +38,7 @@ function LevelOne(){
                     <section>
                         <img ref={ parrilla } className='parrillaImg' src={Parrilla} alt="Parrilla imagen" />
                         <img ref={llamas} src={Llamas} className='llamasImg' alt="Llamas imagen" />
+                        <CarnesComponent/>
                     </section>
                 </section>
                 <Base classType="right"/>

@@ -55,6 +55,7 @@
                 mix-blend-mode: screen;
                 user-select: none;
                 pointer-events: none;
+                z-index: 999;
 
                 @include bp(tablet){
                     transform: translateY(-40%);
@@ -87,6 +88,28 @@
                 @include animate(viewLlamas, 1.5s, linear, infinite);
     
             }
+        }
+
+        .carnes{
+
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+
+            section {
+
+                display: flex;
+                flex-flow: column;
+                position: inherit;
+
+                img {
+                    position: fixed;
+                }
+
+            }
+        
         }
 
     }
