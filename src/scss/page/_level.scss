@@ -110,6 +110,7 @@
                     cursor: pointer;
                     transform: scale(1);
                     transition: 1s ease;
+                    user-select: none;
 
                     &:hover{
 
@@ -217,6 +218,8 @@
     flex-flow: row;
     column-gap: 50px;
     align-items: center;
+    // z-index: 99;
+    max-width: 800px;
 
     div {
 
@@ -231,7 +234,6 @@
 
         p{ 
             font-size: rem(20px);
-            width: 80%;
         }
 
     }

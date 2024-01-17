@@ -84,6 +84,7 @@ function CarnesComponent(){
         const platilloElementRight : HTMLImageElement | null = document.querySelector('.platos.right img');
         const carne : HTMLImageElement | null = carmeElement.current
         const contador : HTMLParagraphElement | null = document.querySelector('.time .chronometer');
+        const cocinando = new Audio('src/assets/sonido/cocinando.mp3');
 
         if(getFuego && carne && baseImgRight && platilloElementRight && contador){
 
@@ -91,7 +92,7 @@ function CarnesComponent(){
 
                 const fuegoRect = getFuego.getBoundingClientRect();
                 const xFuego = fuegoRect.x + (carne.offsetWidth / 2);
-                const yFuego = fuegoRect.y + (carne.offsetHeight / 2);
+                const yFuego = fuegoRect.y + (fuegoRect.height / 2 - (screen.height * 0.03));
 
                 carne.style.left = `${xFuego}px`;
                 carne.style.top = `${yFuego}px`;
@@ -100,8 +101,11 @@ function CarnesComponent(){
                 let segundos = 7;
                 const milisegundoDiv : HTMLElement = contador.querySelector('.milisegundos') as HTMLElement;
                 const segundosDiv : HTMLElement = contador.querySelector('.segundos') as HTMLElement;
+                const listo = new Audio('src/assets/sonido/listo.mp3')
 
                 // console.log(contador);
+                cocinando.loop = false;
+                cocinando.play();
 
                 const deleteInternal = setInterval(() => {
     
@@ -109,6 +113,7 @@ function CarnesComponent(){
                         milisegundoDiv.innerHTML = `${milisegundos <= 9 ? '0' + milisegundos : milisegundos  }`;
                         segundosDiv.innerHTML = `${segundos <= 9 ? '0' + segundos : segundos  }`
                     }else{
+                        listo.play();
                         clearInterval(deleteInternal);
                     }
 
@@ -131,6 +136,8 @@ function CarnesComponent(){
 
             if(carneCocinada){  
 
+                cocinando.pause();
+
                 const baseRect = baseImgRight.getBoundingClientRect();
                 const platoRect = platilloElementRight.getBoundingClientRect();
                 const heightElement : number = baseImgRight.offsetHeight;
@@ -138,6 +145,7 @@ function CarnesComponent(){
                 const topPosition : number = baseRect.top + (screen.width * 0.023);
 
                 carne.style.width = `${carneWidth}px`;
+                
 
 
                 if(carne){

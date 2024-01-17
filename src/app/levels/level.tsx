@@ -4,6 +4,13 @@ import LevelOne from './all/level_one';
 
 function Level() {
 
+
+    const fireSound = new Audio('src/assets/sonido/fire.mp3');
+    fireSound.volume = 0.1  
+    fireSound.loop = true;
+    fireSound.play();
+
+
     return (
       <>
         <section className="allLevels">

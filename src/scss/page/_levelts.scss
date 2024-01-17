@@ -33,6 +33,7 @@
         background-image: url(../assets/img/valla.png);
         background-position: center bottom;
         background-size: cover;
+        // z-index: 99;
 
     }
 
@@ -46,6 +47,7 @@
         background-image: url(../assets/img/silueta.png);
         background-position: center;
         background-size: contain;
+        z-index: -1;
 
         @include bp(mobileBIG){
             bottom: 30%;
