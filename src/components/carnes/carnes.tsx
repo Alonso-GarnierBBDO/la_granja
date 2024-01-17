@@ -42,7 +42,7 @@ function CarnesComponent(){
                 const heightElement : number = baseImg.offsetHeight;
                 let platoLeft = platoRect.left + ((platoRect.width / 2) - ((heightElement / 2)));
                 const topPosition : number = baseRect.top + (screen.width * 0.023);
-                const imageLeft = screen.width * 0.04;
+                // const imageLeft = screen.width * 0.04;
                 const carne = carmeElement.current;
 
                 console.log(platoLeft)
