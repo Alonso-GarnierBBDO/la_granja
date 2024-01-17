@@ -35,7 +35,7 @@ function CarnesComponent(){
 
             if(parentElement){
                 const heightElement : number = platilloImg.offsetHeight;
-                const topPosition : number = parentElement.offsetTop + (screen.width * 0.05);
+                const topPosition : number = platilloImg.getBoundingClientRect().top + (screen.width * 0.023);
                 const imageLeft = screen.width * 0.04;
                 const carne = carmeElement.current;
 
