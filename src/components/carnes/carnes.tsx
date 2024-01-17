@@ -4,35 +4,69 @@ import Cruda from '../../assets/img/crudo.png';
 
 function CarnesComponent(){
 
-    const cards : any = useRef({})
+    const carmeElement = useRef<HTMLImageElement | null>(null);
 
     useEffect(() => {
 
-        //const elementsImage : any = Object.values(cards.current);
-        //ResizeElement(elementsImage)
+        const platilloImg : HTMLImageElement | null = document.querySelector('.bases.left img');
+
+        if(platilloImg){
+
+            platilloImg.addEventListener('load', () => {
+
+                carnesResize(platilloImg);
+
+                window.addEventListener('resize', () => {
+                    carnesResize(platilloImg)
+                });
+
+            });
+        }
+
+    }, [carmeElement]);
 
 
-    }, [cards]);
-
-    /*function ResizeElement(elementsImage : any){ 
+    const carnesResize = (platilloImg : HTMLImageElement) => {
 
 
-        const platos : HTMLElement | null = document.querySelector('.platos.left img');
+        if(platilloImg.complete){
 
-        if(platos){
+            const parentElement : HTMLElement | null = platilloImg.parentElement;
 
-            console.log(platos);
+            if(parentElement){
+                const heightElement : number = platilloImg.offsetHeight;
+                const topPosition : number = parentElement.offsetTop + (screen.width * 0.05);
+                const imageLeft = screen.width * 0.04;
+                const carne = carmeElement.current;
+
+                console.log(imageLeft);
+
+                if(carne){
+
+                    if(screen.width >= 1600){
+                        carne.width = heightElement - 40;
+                    }else if(screen.width >= 1150){
+                        carne.width = heightElement - 20;
+                    }else{
+                        carne.width = heightElement - 10;
+                    }
+
+                    carne.style.top = `${topPosition}px`;
+                    carne.style.left = `${imageLeft}px`;
+
+                }
+            }   
 
         }
-    }*/
+
+    }
+
 
     return (
         <>
             <section className="carnes">
                 <section>
-                    <img src={Cruda} alt="carne" ref={(element : HTMLImageElement) => cards.current[0] = element} />
-                    <img src={Cruda} alt="carne" ref={(element : HTMLImageElement) => cards.current[1] = element} />  
-                    <img src={Cruda} alt="carne" ref={(element : HTMLImageElement) => cards.current[2] = element} />
+                    <img src={Cruda} alt="carne" ref={carmeElement} />
                 </section>
             </section>
         </>

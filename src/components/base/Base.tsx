@@ -65,64 +65,8 @@ function BaseLeft({ classType } : { classType : string }){
         img.style.height = `${style}px`;
 
 
-        heightCarne(style)
-
     }
 
-    const heightCarne = (height: number) => {
-
-
-        const carnesIMG : NodeListOf<HTMLImageElement> = document.querySelectorAll('.carnes img');
-        const carnesLeft : HTMLElement | null = document.querySelector('.platos.left');
-
-        if(carnesLeft){
-
-            const bottomElement : number = carnesLeft.offsetTop;
-            //const leftElement : number = carnesLeft.clientWidth / 2;
-
-
-            carnesIMG.forEach( ( e : HTMLImageElement ) => {
-
-                e.onload = () => {
-
-                    setTimeout( () =>  {
-                        let carneWidth = e.clientHeight / 2;
-
-                        if(screen.width >= 1600){
-                            carneWidth = e.clientHeight / 2;
-                        }else if(screen.width >= 1150){
-                            carneWidth = e.clientHeight / 2;
-                        }else if(screen.width >= 900){
-                            carneWidth = e.clientHeight / 2;
-                        }else if(screen.width >= 800){
-                            carneWidth = e.clientHeight / 2;
-                        }else{
-                            carneWidth = e.clientHeight / 2;
-                        }
-
-                        e.style.left = `${Math.floor(carneWidth)}px`;
-                    }, 50)
-                }
-
-
-                if(screen.width >= 1600){
-                    e.style.height = `${height - 70}px`;
-                }else if(screen.width >= 1150){
-                    e.style.height = `${height - 40}px`;
-                }else if(screen.width >= 900){
-                    e.style.height = `${height - 35}px`;
-                }else if(screen.width >= 800){
-                    e.style.height = `${height - 30}px`;
-                }else{
-                    e.style.height = `${height - 30}px`;
-                }
-
-                e.style.top = `${bottomElement}px`;
-    
-            });
-        }
-
-    }
 
     return (
         <>
