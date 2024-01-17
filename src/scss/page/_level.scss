@@ -56,6 +56,7 @@
                 user-select: none;
                 pointer-events: none;
                 z-index: 999;
+                opacity: 0.8;
 
                 @include bp(tablet){
                     transform: translateY(-40%);
@@ -80,7 +81,7 @@
                     }
 
                     100%{
-                        mix-blend-mode: color-dodge;
+                        // mix-blend-mode: color-dodge;
                     }
 
                 }
@@ -106,6 +107,16 @@
 
                 img {
                     position: fixed;
+                    cursor: pointer;
+                    transform: scale(1);
+                    transition: 1s ease;
+
+                    &:hover{
+
+                        transform: scale(1.05);
+
+                    }
+
                 }
 
             }
@@ -125,6 +136,7 @@
     align-items: flex-end;
     pointer-events: none;
     user-select: none;
+    z-index: -1;
 
     .base {
         width: 200%;
@@ -187,4 +199,48 @@
 
 .platos.right{
     right: 0px;
+    z-index: -1;
+}
+
+
+.time{
+    position: fixed;
+    width: 50dvw;
+    height: 30dvh;
+    background-color: white;
+    z-index: -1;
+    top: calc(50dvh - 25dvh);
+    left: calc(50dvw - 25dvw);
+    padding: 50px;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: row;
+    column-gap: 50px;
+    align-items: center;
+
+    div {
+
+        margin-bottom: 80px;
+
+        p,span {
+
+            font-family: $fonts-one;
+            color: #BB2025;
+
+        }
+
+        p{ 
+            font-size: rem(20px);
+            width: 80%;
+        }
+
+    }
+
+    .chronometer{
+        font-size: rem(40px);
+        width: 400px;
+        color: #BB2025;
+    
+    }
+
 }

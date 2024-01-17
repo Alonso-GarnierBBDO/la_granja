@@ -1,3 +1,10 @@
+// Fonts
+
+@font-face {
+    font-family: bjola;
+    src: url(../assets/fonts/bjola.ttf);
+}
+
 // Animation
 
 @mixin keyframes($name){
@@ -46,3 +53,5 @@
 
 // Colors
 $error-background-colors: rgba(0, 0, 0, 0.451);
+
+$fonts-one: bjola;
