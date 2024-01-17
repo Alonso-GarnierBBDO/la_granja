@@ -84,7 +84,7 @@ function CarnesComponent(){
         const platilloElementRight : HTMLImageElement | null = document.querySelector('.platos.right img');
         const carne : HTMLImageElement | null = carmeElement.current
         const contador : HTMLParagraphElement | null = document.querySelector('.time .chronometer');
-        const cocinando = new Audio('src/assets/sonido/cocinando.mp3');
+        const cocinando = new Audio('/assets/sonido/cocinando.mp3');
 
         if(getFuego && carne && baseImgRight && platilloElementRight && contador){
 
@@ -101,7 +101,7 @@ function CarnesComponent(){
                 let segundos = 7;
                 const milisegundoDiv : HTMLElement = contador.querySelector('.milisegundos') as HTMLElement;
                 const segundosDiv : HTMLElement = contador.querySelector('.segundos') as HTMLElement;
-                const listo = new Audio('src/assets/sonido/listo.mp3')
+                const listo = new Audio('/assets/sonido/listo.mp3')
 
                 // console.log(contador);
                 cocinando.loop = false;

@@ -206,12 +206,12 @@
 
 .time{
     position: fixed;
-    width: 50dvw;
     height: 30dvh;
     background-color: white;
     z-index: -1;
     top: calc(50dvh - 25dvh);
-    left: calc(50dvw - 25dvw);
+    // left: calc(50dvw - 25dvw);
+    left: calc(50% - 325px);
     padding: 50px;
     border-radius: 20px;
     display: flex;
@@ -219,7 +219,7 @@
     column-gap: 50px;
     align-items: center;
     // z-index: 99;
-    max-width: 800px;
+    width: 650px;
 
     div {
 
