@@ -210,13 +210,15 @@
     background-color: white;
     z-index: -1;
     top: calc(50dvh - 25dvh);
-    // left: calc(50dvw - 25dvw);
+    display: grid;
+    grid-template-columns: 20% 80%;
     left: calc(50% - 325px);
     padding: 50px;
     border-radius: 20px;
-    display: flex;
-    flex-flow: row;
-    column-gap: 50px;
+    // display: flex;
+    // flex-flow: row;
+    // column-gap: 50px;
+    justify-content: center;
     align-items: center;
     // z-index: 99;
     width: 650px;
@@ -240,7 +242,6 @@
 
     .chronometer{
         font-size: rem(40px);
-        width: 400px;
         color: #BB2025;
     
     }

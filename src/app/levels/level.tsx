@@ -23,7 +23,7 @@ function Level() {
                 <span className='segundos'>00</span>:<span className='milisegundos'>00</span>
               </div>
               <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore adipisci quae, ipsam rem quos commodi amet numquam nemo, quaerat iure cumque fugit tempora veritatis? Ipsam sapiente inventore adipisci porro magni?</p>
+                <p>La carne nunca se debe salar durante la cocción ni mucho menos debe usarse sal fina porque ésta le extrae los jugos. Para este proceso se debe usar una sal gruesa o semigruesa antes o después de la cocción. Sí se hace antes de ponerla en la parrilla, debe “masajearse” el corte para que quede bien impregnado.</p>
               </div>
           </section>
           <section className="vallas"></section>
