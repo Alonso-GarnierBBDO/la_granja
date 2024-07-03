@@ -90,7 +90,7 @@ function CarnesComponent(){
 
             if(!parrilla){
 
-                const fuegoRect = getFuego.getBoundingClientRect();
+                const fuegoRect = getFuego.getBoundingClientRect(); 
                 const xFuego = fuegoRect.x + (carne.offsetWidth / 2);
                 const yFuego = fuegoRect.y + (fuegoRect.height / 2 - (screen.height * 0.03));
 
